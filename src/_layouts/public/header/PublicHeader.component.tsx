@@ -2,9 +2,9 @@
 
 import { Button } from '@/components/ui/button'
 import { paths } from '@/navigate/paths'
-import { Menu, X } from 'lucide-react'
+import { CircleUserRound, Menu, X } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NavbarOptions } from './PublicHeader.config'
 import { useReduxSelector } from '@/hooks'
 import HeaderLogo from '@/components/centum-logos/HeaderLogo.component'
@@ -15,24 +15,38 @@ function PublicHeader() {
   const { isLoggedIn, role } = useReduxSelector((state) => state.user)
   const pathName = usePathname()
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-black shadow-sm sticky top-0 z-50 px-4">
+    <header className={`
+        absolute sticky top-0 z-50 px-4  
+        ${isScrolled ? "bg-white shadow-md" : "bg-transparent"}
+      `}>
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center h-24">
 
-          <Link href="/" className="flex items-center h-20 bg-black p-1" onClick={() => setMobileMenuOpen(false)}>
+          <Link href="/" className="flex items-center h-20 p-1" onClick={() => setMobileMenuOpen(false)}>
             <HeaderLogo />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-8">
             {NavbarOptions.map((option) => (
-              <Link key={option.name} href={option.href} className={`block text-white hover:text-green-400 text-md py-1 ${option.href === pathName ? 'text-green-400 border-b-2 border-green-500' : ''}`}>
+              <Link key={option.name} href={option.href} className={`block text-black hover:text-[#16AF9D] font-semibold text-md py-1 ${option.href === pathName ? 'text-[#16AF9D] border-b-2 border-[#16AF9D]' : ''}`}>
                 {option.name}
               </Link>
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="md:hidden text-white hover:bg-gray-300" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <Button variant="ghost" size="sm" className="md:hidden text-black hover:bg-gray-300" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
 
@@ -46,13 +60,13 @@ function PublicHeader() {
               ) : (
                 <>
                   <Link href={paths.login()}>
-                    <Button size="sm" className="bg-black hover:bg-gray-800 text-white">
-                      Sign In
+                    <Button size="sm" className="text-black bg-transparent hover:bg-transparent hover:text-[#16AF9D]">
+                      <CircleUserRound className='mr-2 hover:text-black' /> Sign Up
                     </Button>
                   </Link>
                   <Link href={paths.signup()}>
-                    <Button className="bg-green-600 hover:bg-green-700" size="sm">
-                      Sign Up
+                    <Button className="bg-[linear-gradient(to_right,#16AF9D_0%,#0B3029_100%)] w-38">
+                      Get Started
                     </Button>
                   </Link>
                 </>
@@ -85,7 +99,7 @@ function PublicHeader() {
                   </Button>
                 </Link>
                 <Link href={paths.signup()} className="block">
-                  <Button className="bg-green-600 hover:bg-green-700 w-full" size="sm">
+                  <Button className="bg-[linear-gradient(to_right,#16AF9D_0%,#0B3029_100%)] hover:bg-green-700 w-full" size="sm">
                     Sign Up
                   </Button>
                 </Link>

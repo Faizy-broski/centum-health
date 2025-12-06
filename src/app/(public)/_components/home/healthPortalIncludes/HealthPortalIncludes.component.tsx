@@ -25,7 +25,7 @@ export default function HealthPortalIncludes() {
           {features.map(({ icon: Icon, title, description }, idx) => (
             <motion.div key={idx} className="text-center group" whileHover={{ y: -5 }} whileTap={{ scale: 0.98 }}>
               <div className="p-8 sm:p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <Icon className="h-8 w-8 sm:h-12 sm:w-12 text-gray-600 mx-auto group-hover:text-green-600 transition-colors duration-300" />
+                <Icon className="h-8 w-8 sm:h-12 sm:w-12 text-gray-600 mx-auto group-hover:text-[#16AF9D] transition-colors duration-300" />
                 <h3 className="text-base sm:text-lg font-semibold text-gray-900 mt-3">{title}</h3>
                 <p className="text-gray-600 text-xs sm:text-sm">{description}</p>
               </div>
@@ -35,7 +35,7 @@ export default function HealthPortalIncludes() {
 
         {/* Footer Note */}
         <div className="text-center mt-6 sm:mt-8">
-          <p className="text-green-600 font-medium text-sm sm:text-base">+ Real-time updates • Secure access • Mobile optimized</p>
+          <p className="text-gray-600 font-medium text-sm sm:text-base">+ Real-time updates • Secure access • Mobile optimized</p>
         </div>
       </div>
     </section>

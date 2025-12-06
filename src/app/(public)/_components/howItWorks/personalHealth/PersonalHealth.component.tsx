@@ -35,11 +35,11 @@ export default function PersonalHealth() {
     { month: 'Dec', type: 'optimal', value: 87 },
   ]
   return (
-    <section className="py-12 sm:py-16 bg-gray-50">
+    <section className="py-12 sm:py-16 bg-[#16AF9D] bg-gradient-to-b from-[#FFFFFF]/10 to-[#0B3029]/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Your Personal Health Portal Preview</h2>
-          <p className="text-lg sm:text-xl text-gray-600">See how your personalized health dashboard will look with comprehensive biomarker tracking and actionable insights</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">Your Personal Health Portal Preview</h2>
+          <p className="text-lg sm:text-xl text-white/90">See how your personalized health dashboard will look with comprehensive biomarker tracking and actionable insights</p>
         </div>
 
         <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12" variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }}>

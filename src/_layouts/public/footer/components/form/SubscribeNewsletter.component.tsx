@@ -39,10 +39,10 @@ export default function SubscribeNewsletter() {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button 
-          className={`w-full text-sm sm:text-base ${
+          className={`w-full text-black text-sm sm:text-base ${
             user.subscribeToNewsletter
-              ? 'bg-green-700 hover:bg-green-800 pointer-events-none'
-              : 'bg-green-600 hover:bg-green-700'
+              ? 'bg-white hover:bg-white/90 pointer-events-none'
+              : 'bg-white hover:bg-white/90'
           }`}
         >
           {user.subscribeToNewsletter ? 'Subscribed' : 'Subscribe'}
