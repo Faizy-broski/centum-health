@@ -9,8 +9,6 @@ const healthCategories = [
   {
     title: 'Metabolic & Blood Sugar ',
     icon: Activity,
-    iconBg: 'bg-blue-500',
-    iconColor: 'text-white',
     markersCount: '8 markers',
     markers: ['Fasting glucose', 'HbA1c', 'Insulin', 'C-peptide', 'HOMA-IR'],
     moreMarkers: ['Fructosamine', 'OGTT (2hr glucose)', 'Leptin'],
@@ -18,8 +16,6 @@ const healthCategories = [
   {
     title: 'Lipid & Cardiovascular ',
     icon: Heart,
-    iconBg: 'bg-red-500/90',
-    iconColor: 'text-white',
     markersCount: '17 markers',
     markers: ['Total cholesterol', 'LDL cholesterol (direct)', 'HDL cholesterol', 'Triglycerides', ' Non-HDL cholesterol'],
     moreMarkers: ['ApoB', 'ApoA1', 'Lp(a)', 'Homocysteine', 'hs-CRP', 'NT-proBNP', 'Troponin I', 'Lp-PLA2', 'Remnant cholesterol', 'LDL particle number', 'LDL size/pattern', 'HDL large/LDL medium'],
@@ -27,8 +23,6 @@ const healthCategories = [
   {
     title: 'Liver & Detoxification',
     icon: Stethoscope,
-    iconBg: 'bg-green-500',
-    iconColor: 'text-white',
     markersCount: '7 markers',
     markers: ['AST ', 'ALT ', 'GGT ', 'ALP', 'Bilirubin (total) '],
     moreMarkers: ['Albumin', 'Total protein'],
@@ -36,8 +30,6 @@ const healthCategories = [
   {
     title: 'Kidney & Electrolyte ',
     icon: Droplets,
-    iconBg: 'bg-cyan-500',
-    iconColor: 'text-white',
     markersCount: '7 markers',
     markers: ['Creatinine', 'eGFR', 'BUN', 'Uric acid', ' Cystatin C'],
     moreMarkers: ['Sodium', 'Potassium'],
@@ -45,8 +37,6 @@ const healthCategories = [
   {
     title: 'Thyroid ',
     icon: Zap,
-    iconBg: 'bg-purple-500',
-    iconColor: 'text-white',
     markersCount: '6 markers',
     markers: ['TSH ', 'Free T4', 'Free T3', 'Reverse T3', 'TPOAb'],
     moreMarkers: ['Thyroglobulin Ab'],
@@ -54,16 +44,12 @@ const healthCategories = [
   {
     title: 'Adrenal & Stress ',
     icon: Target,
-    iconBg: 'bg-orange-500',
-    iconColor: 'text-white',
     markersCount: '3 markers',
     markers: ['Cortisol (serum, morning)', 'DHEA-S', 'ACTH'],
   },
   {
     title: 'Sex Hormones & Fertility',
     icon: Users,
-    iconBg: 'bg-pink-500/90',
-    iconColor: 'text-white',
     markersCount: '7 markers',
     markers: ['Testosterone (total)', 'Testosterone (free)', 'SHBG', 'Estradiol', 'Progesterone'],
     moreMarkers: ['FSH', 'LH'],
@@ -71,8 +57,6 @@ const healthCategories = [
   {
     title: 'Nutrient Status',
     icon: Apple,
-    iconBg: 'bg-emerald-500',
-    iconColor: 'text-white',
     markersCount: '14 markers',
     markers: ['Vitamin D (25-OH)', 'Vitamin B12', 'Folate (serum)', 'Vitamin B6', 'Iron'],
     moreMarkers: ['Ferritin', 'Soluble Transferrin Receptor (sTfR)', 'Transferrin', 'TIBC', 'Zinc', 'Copper', 'Methylmalonic Acid (MMA)', 'Magnesium (serum)', 'Selenium'],
@@ -80,8 +64,6 @@ const healthCategories = [
   {
     title: 'Inflammation & Immune ',
     icon: Shield,
-    iconBg: 'bg-yellow-500',
-    iconColor: 'text-white',
     markersCount: '8 markers',
     markers: ['WBC count', 'Neutrophils', 'Lymphocytes', 'Monocytes', 'Eosinophils'],
     moreMarkers: ['	Basophils', 'Platelets', 'hs-IL-6'],
@@ -89,8 +71,6 @@ const healthCategories = [
   {
     title: 'Blood Health & Haematology',
     icon: TestTubeDiagonal,
-    iconBg: 'bg-indigo-500',
-    iconColor: 'text-white',
     markersCount: '8 markers',
     markers: ['RBC count', 'Hemoglobin', 'Hematocrit', 'MCV', 'MCH'],
     moreMarkers: ['MCHC', 'RDW', 'Reticulocyte count'],
@@ -98,48 +78,36 @@ const healthCategories = [
   {
     title: 'Bone & Mineral Health',
     icon: Brain,
-    iconBg: 'bg-slate-500',
-    iconColor: 'text-white',
     markersCount: '3 markers',
     markers: ['Parathyroid hormone (PTH)', 'Calcium (total)', 'Phosphate'],
   },
   {
     title: 'Cancer Markers ',
     icon: Activity,
-    iconBg: 'bg-amber-500',
-    iconColor: 'text-white',
     markersCount: '3 markers',
     markers: ['PSA (Prostate-Specific Antigen) – for male members CA125 (Ovarian Cancer Marker) – for female members', 'CEA (Carcinoembryonic Antigen)', 'AFP (Alpha-fetoprotein)'],
   },
   {
     title: 'Advanced Metabolic & Hormonal',
     icon: Droplets,
-    iconBg: 'bg-teal-500',
-    iconColor: 'text-white',
     markersCount: '3 markers',
     markers: ['IGF-1 (Insulin-like Growth Factor 1)', 'Androstenedione', 'Prolactin'],
   },
   {
     title: 'Heavy Metals & Environmental',
     icon: Shield,
-    iconBg: 'bg-gray-600',
-    iconColor: 'text-white',
     markersCount: '3 markers',
     markers: ['Lead (blood)', 'Mercury (blood)', 'Aluminium (blood)'],
   },
   {
     title: 'Special Risk/Genetic',
     icon: Dna,
-    iconBg: 'bg-violet-500',
-    iconColor: 'text-white',
     markersCount: '1 markers',
     markers: ['ApoE genotype'],
   },
   {
     title: 'Fatty Acids',
     icon: Fish,
-    iconBg: 'bg-blue-400',
-    iconColor: 'text-white',
     markersCount: '2 markers',
     markers: ['Omega-3 index', 'Omega-6:Omega-3 ratio'],
   },
@@ -158,9 +126,9 @@ const rationaleNotes = [
 ]
 export default function HealthCategories() {
   return (
-    <section className="pb-12 bg-blue-50">
+    <section className="pb-12 bg-white">
       <motion.div variants={containerVariants} initial="hidden" whileInView="show" viewport={{ once: true }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
           <motion.div variants={slideLeftVariant} transition={{ type: 'spring', stiffness: 150, damping: 12 }}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {healthCategories.map((category, index) => {
@@ -169,8 +137,8 @@ export default function HealthCategories() {
                 return (
                   <Card key={index} className="bg-white border border-gray-200 hover:shadow-xl transition-all duration-300 p-4 sm:p-6">
                     <div className="flex items-start gap-3 mb-4">
-                      <div className={`p-2 ${category.iconBg} rounded-lg`}>
-                        <category.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${category.iconColor}`} />
+                      <div className={`p-2 bg-[#15AF9D]/10 rounded-lg`}>
+                        <category.icon className={`h-5 w-5 sm:h-6 sm:w-6 text-[#0B3029]`} />
                       </div>
                       <div>
                         <h3 className="text-base sm:text-lg font-bold text-gray-900">{category.title}</h3>
@@ -207,10 +175,10 @@ export default function HealthCategories() {
             </div>
           </motion.div>
         </div>
-        <div className="max-w-8xl mx-auto px-4 mt-6">
+        <div className="max-w-7xl mx-auto px-4 mt-6">
           <Card className="bg-white shadow-sm border rounded-xl md:p-6">
             <CardHeader>
-              <CardTitle className="text-xl sm:text-2xl font-bold text-center flex items-center justify-center gap-2">
+              <CardTitle className="text-xl sm:text-2xl font-bold flex items-center gap-2">
                 <NotebookPen className="w-5 h-5 mt-1" />
                 Rationale & Notes
               </CardTitle>

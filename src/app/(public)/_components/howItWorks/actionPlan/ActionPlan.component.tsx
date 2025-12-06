@@ -1,58 +1,101 @@
 'use client'
 
-import { Card } from '@/components/ui/card'
-import { CheckCircle2 } from 'lucide-react'
-import { motion } from 'framer-motion'
-import { containerVariants, slideLeftVariant, slideRightVariant } from '@/utils/animation.util'
+// import { Card } from '@/components/ui/card'
+import { CheckCircle2, CircleCheck } from 'lucide-react'
+// import { motion } from 'framer-motion'
+// import { containerVariants, slideLeftVariant, slideRightVariant } from '@/utils/animation.util'
 import React from 'react'
+import { Accordion, AccordionHeader, AccordionBody, } from "@material-tailwind/react";
+
+function Icon({ id, open }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className={`${id === open ? "rotate-180" : ""} h-5 w-5 transition-transform`}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  );
+}
 
 const items = [
   {
-    color: 'green',
     title: 'Clinical Summary',
     text: 'Overall positive findings. Keep up the good work! Recommend following up with your primary care doctor.',
   },
   {
-    color: 'orange',
     title: 'Foods to Enjoy',
     text: 'Mackerel, Sardines, Herring, Walnuts, Cashews, Acai, Acorn Squash',
   },
   {
-    color: 'teal',
     title: 'Foods to Limit',
     text: 'Processed foods, refined sugars, trans fats, excessive alcohol',
   },
   {
-    color: 'purple',
     title: 'Activities to Enjoy',
     text: 'Swimming, walking, yoga, strength training, cycling',
   },
   {
-    color: 'pink',
     title: 'Activities to Limit',
     text: 'Excessive high-intensity exercise, prolonged sitting',
   },
   {
-    color: 'indigo',
     title: 'Self Care',
     text: 'Prioritize 7-9 hours sleep, stress management, meditation, regular health check-ups',
   },
   {
-    color: 'cyan',
     title: 'Supplement Recommendations',
     text: 'Omega-3 Fatty Acids, Red Yeast Rice, Vitamin D3, Magnesium',
   },
 ]
 
 export default function ActionPlan() {
+  const [open, setOpen] = React.useState(0);
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
   return (
     <section className="py-12 sm:py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Your Action Plan</h2>
         </div>
+        <div className="space-y-4">
+          {items.map((item, index) => {
+            const id = index + 1; // unique ID per accordion
 
-        <div className="space-y-4 sm:space-y-6">
+            return (
+              <Accordion
+                key={id}
+                className="rounded-md border px-6"
+                open={open === id}
+                icon={<Icon id={id} open={open} />}
+              >
+                <div className="flex items-center justify-center">
+                  <CircleCheck className="mr-4" />
+
+                  <AccordionHeader
+                    className="border-b-0"
+                    onClick={() => handleOpen(id)}
+                  >
+                    {item.title}
+                  </AccordionHeader>
+                </div>
+
+                <AccordionBody>
+                  {item.text}
+                </AccordionBody>
+              </Accordion>
+            );
+          })}
+        </div>
+
+
+
+        {/* <div className="space-y-4 sm:space-y-6">
           {items.map((item, index) => (
             <motion.div key={index} variants={index % 2 === 0 ? slideLeftVariant : slideRightVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
               <Card className={`border border-${item.color}-200 p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300`}>
@@ -68,7 +111,7 @@ export default function ActionPlan() {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

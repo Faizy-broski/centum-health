@@ -6,5 +6,10 @@ export const generateMetadata = async () =>
     title: 'Blogs',
   })
 export default function Page() {
-  return <BlogPage />
+  return (
+    <>
+      <BlogPage />
+    </>
+
+  )
 }

@@ -4,6 +4,9 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { containerVariants, fadeUpVariant, slideLeftVariant } from '@/utils/animation.util'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { ChevronRight } from 'lucide-react'
 
 type BiomarkerType = 'optimal' | 'average' | 'attention'
 
@@ -187,6 +190,13 @@ export default function PersonalHealth() {
             <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">8</div>
             <div className="text-xs sm:text-sm text-blue-700">Biomarkers showing improvement this quarter</div>
           </Card>
+        </div>
+        <div className='mx-auto mt-10 text-center'>
+        <Link href='/'>
+          <Button size="lg" className="bg-white text-black hover:bg-white/90 text-base sm:text-lg px-6 sm:px-8 py-2 sm:py-3 w-full sm:w-auto hover:scale-105 transition-transform duration-300">
+            Start Your Journey <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+          </Button>
+        </Link>
         </div>
       </div>
     </section>

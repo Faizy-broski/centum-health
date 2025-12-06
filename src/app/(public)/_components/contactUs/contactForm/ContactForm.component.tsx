@@ -37,17 +37,21 @@ export default function ContactForm() {
     }
   }
 
+  const mapUrl =
+    "https://maps.googleapis.com/maps/api/staticmap?center=Kampung%20Bali,Jakarta&zoom=15&size=600x600&maptype=roadmap&markers=color:0x16AF9D|Kampung%20Bali&key=YOUR_API_KEY";
+
+
   return (
     <section className="py-12 sm:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto bg-white/80 shadow-2xl rounded-lg p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12">
           {/* Left: Contact Form */}
           <motion.div variants={slideLeftVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <Card className="bg-gray-50 border-0 shadow-lg p-6 sm:p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Us</h2>
+            
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Fill The Form</h2>
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  
                     <FormField
                       control={form.control}
                       name="name"
@@ -74,7 +78,7 @@ export default function ContactForm() {
                         </FormItem>
                       )}
                     />
-                  </div>
+                  
                   <FormField
                     control={form.control}
                     name="phone"
@@ -114,23 +118,19 @@ export default function ContactForm() {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full h-12" disabled={isLoading}>
+                  <Button type="submit" className="w-full h-12 bg-[linear-gradient(to_right,#16AF9D_0%,#0B3029_100%)]" disabled={isLoading}>
                     Send Message
                   </Button>
                 </form>
               </Form>
-            </Card>
-          </motion.div>
-
-          {/* Right: Contact Info */}
-          <motion.div variants={slideRightVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
-            <div className="space-y-8">
+            
+            <div className="space-y-8 mt-6 flex justify-between items-start">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h2>
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
-                    <div className="p-3 bg-blue-100 rounded-lg">
-                      <Mail className="h-6 w-6 text-blue-600" />
+                    <div className="p-3 bg-blue-50 rounded-lg">
+                      <Mail className="h-6 w-6 text-[#0B342D]" />
                     </div>
                     <p className="text-base text-gray-600">info@centum.health</p>
                   </div>
@@ -157,6 +157,19 @@ export default function ContactForm() {
                 </div>
               </div>
             </div>
+          </motion.div>
+
+          {/* Right: Contact Info */}
+          <motion.div variants={slideRightVariant} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <div className="w-full h-full mx-auto rounded-2xl overflow-hidden border bg-white">
+      {/* <img
+        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.6064449053!2d-0.43124327626421655!3d51.5286070141754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1765023621353!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade'
+        alt="Map"
+        className="w-full h-full object-cover"
+      /> */}
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317716.6064449053!2d-0.43124327626421655!3d51.5286070141754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1765023621353!5m2!1sen!2s" className='w-full h-full'></iframe>
+    </div>
           </motion.div>
         </div>
       </div>

@@ -30,7 +30,7 @@ export default function WhatIsCentumSection() {
         {/* Header */}
         <motion.div variants={fadeUpVariant} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">What is Centum?</h2>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-5xl mx-auto">
             Unlock the power of your health data with Australia's most advanced health optimization platform. Centum Health Tracker is a next-generation, membership-based platform that empowers you to take charge of your
             health and longevity. We combine comprehensive biomarker testing, advanced AI-powered analysis, and personalized recommendations delivered securely and conveniently through your own digital health portal.
           </p>

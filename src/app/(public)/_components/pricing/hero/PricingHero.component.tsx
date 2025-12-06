@@ -5,7 +5,7 @@ import { fadeUpVariant, slideLeftVariant, slideRightVariant } from '@/utils/anim
 
 export default function PricingHero() {
   return (
-    <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-white via-gray-50 to-green-50 overflow-hidden">
+    <section className="relative py-12 sm:py-16 lg:py-20 bg-[url('/assets/background_images/how-it-works-bg.png')] bg-cover bg-center overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <motion.div className="absolute top-20 left-10 w-32 h-32 bg-green-200 rounded-full" animate={{ y: [0, -20, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} />

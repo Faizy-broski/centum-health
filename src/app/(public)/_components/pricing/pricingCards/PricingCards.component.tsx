@@ -92,19 +92,19 @@ export default function PricingCards() {
             <div
               key={tier.name}
               className={`relative group bg-white rounded-2xl shadow-lg border-2 transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-fit ${
-                tier.isPopular ? 'border-primary bg-primary/5 scale-105' : 'border-gray-200 hover:border-primary/50'
+                tier.isPopular ? 'border-[#0B3029] bg-[#0B3029]/5 scale-105' : 'border-gray-200 hover:border-[#0B3029]/50'
               }`}
             >
               {/* Popular Badge */}
               {tier.isPopular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold animate-bounce">Most Popular</div>
+                  <div className="bg-[linear-gradient(to_right,#16AF9D_0%,#0B3029_100%)] text-white px-4 py-1 rounded-full text-sm font-semibold animate-bounce">Most Popular</div>
                 </div>
               )}
 
               <div className="p-8 ">
                 {/* Tier Name */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-primary transition-all duration-300">{tier.name}</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center group-hover:text-[#16AF9D] transition-all duration-300">{tier.name}</h3>
 
                 {/* Pricing */}
                 <div className="text-center mb-6">
@@ -154,7 +154,7 @@ export default function PricingCards() {
                   planName={tier.name}
                   buttonText={tier.buttonText}
                   subscriptionType={tier.name.toLowerCase()}
-                  buttonClassName={`w-full py-3 text-base font-semibold transition-all duration-300 hover:scale-105 ${tier.isPopular ? 'bg-primary hover:bg-primary/90 text-white' : 'bg-gray-900 hover:bg-gray-800 text-white'}`}
+                  buttonClassName={`w-full py-3 text-base font-semibold transition-all duration-300 hover:scale-105 ${tier.isPopular ? 'bg-[linear-gradient(to_right,#16AF9D_0%,#0B3029_100%)] hover:bg-primary/90 text-white' : 'bg-[linear-gradient(to_right,#16AF9D_0%,#0B3029_100%)] hover:bg-gray-800 text-white'}`}
                 />
               </div>
             </div>
