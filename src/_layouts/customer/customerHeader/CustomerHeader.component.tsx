@@ -48,7 +48,7 @@ export default function CustomerHeader() {
               {/* Logo */}
               <Link href={'/'}>
                 <div className="cursor-pointer flex items-center h-20 bg-black px-3 py-1">
-                  <Image src="/assets/icons/centum_logo_white.svg" alt="Centum Health" className="h-full w-auto object-contain" height={750} width={750} priority />
+                  <Image src="/assets/icons/centum_health-logo.svg" alt="Centum Health" className="h-full w-auto object-contain" height={750} width={750} priority />
                 </div>
               </Link>
             </div>
