@@ -12,7 +12,7 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from '@
 import { Button } from '@/components/ui/button'
 import { initialFAQs } from '@/dto/FAQ.dto'
 import { TSchema } from '../_components/FAQForm/FAQForm.schema'
-import { useGetAllFaqsQuery, useCreateFaqMutation, useUpdateFaqMutation, useDeleteFaqMutation } from '@/redux/services/admin/faq.api'
+import { useGetFaqsQuery, useCreateFaqMutation, useUpdateFaqMutation, useDeleteFaqMutation } from '@/redux/services/admin/faq.api'
 import { FAQ } from '@/types/FAQs.type'
 
 export default function Layout() {
@@ -23,7 +23,7 @@ export default function Layout() {
   const [editingFaq, setEditingFaq] = useState<FAQ | null>(null)
   const [faqToDelete, setFaqToDelete] = useState<FAQ | null>(null)
 
-  const { data, isLoading } = useGetAllFaqsQuery(selectedCategory ? { category: selectedCategory } : undefined)
+  const { data, isLoading } = useGetFaqsQuery(selectedCategory ? { category: selectedCategory } : undefined)
 
   const [createFaq] = useCreateFaqMutation()
   const [updateFaq] = useUpdateFaqMutation()

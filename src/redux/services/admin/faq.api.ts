@@ -9,7 +9,7 @@ export interface FAQResponse {
 
 export const faqApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getAllFaqs: builder.query<FAQResponse, { category?: string } | void>({
+    getFaqs: builder.query<FAQResponse, { category?: string } | void>({
       query: (params) => (params?.category ? `admin/faqs?category=${params.category}` : 'admin/faqs'),
       providesTags: ['FAQ'],
     }),
@@ -50,4 +50,4 @@ export const faqApi = api.injectEndpoints({
   }),
 })
 
-export const { useGetAllFaqsQuery, useCreateFaqMutation, useUpdateFaqMutation, useAutosaveFaqMutation, useDeleteFaqMutation } = faqApi
+export const { useGetFaqsQuery, useCreateFaqMutation, useUpdateFaqMutation, useAutosaveFaqMutation, useDeleteFaqMutation } = faqApi
